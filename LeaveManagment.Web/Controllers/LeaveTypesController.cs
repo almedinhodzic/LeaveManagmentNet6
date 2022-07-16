@@ -9,9 +9,12 @@ using LeaveManagment.Web.Data;
 using AutoMapper;
 using LeaveManagment.Web.Models;
 using LeaveManagment.Web.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using LeaveManagment.Web.Constants;
 
 namespace LeaveManagment.Web.Controllers
 {
+    [Authorize(Roles = Roles.Administrator)]
     public class LeaveTypesController : Controller
     {
         private readonly ILeaveTypeRepository leaveTypeRepository;
